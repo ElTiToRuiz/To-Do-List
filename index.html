@@ -9,11 +9,51 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
   <body>
-      <div id="app">
-          <div class="task-list" id="task-list">
-            <!-- Task items will be dynamically inserted here -->
-          </div>
-      </div>
-      <script type="module" src="js/main.js"></script>
+    <div class="container">
+        <section id="menu">
+            <span class="material-symbols-outlined">menu</span>
+            <h2>Categories</h2>
+            <div class="category-list" id="category-list">
+                <!-- Category items will be dynamically inserted here -->
+            </div>
+            <div class="add-category">
+                <button id="add-category">Add Category</button>
+            </div>
+            <h2>Sort Task</h2>
+            <div class="status" id="status-list">
+                <ul>
+                    <li><button>Pending</button></li>
+                    <li><button>In Progress</button></li>
+                    <li><button>Completed</button></li>
+                </ul>
+                <div class="add-status">
+                    <button id="add-status">Add Status</button>
+                </div>
+            </div>
+            <h2>Delete</h2>
+            <div class="delete">
+                <button id="delete-category">Delete Completed Tasks</button>
+                <button id="delete">Delete All</button>
+            </div>
+        </section>
+        <main>
+            <span class="material-symbols-outlined" id="main-menu">menu</span>
+            <div class="task-section">
+                <div class="title">
+                    <h2>Tasks</h2>
+                </div>
+                <div class="task-list" id="task-list">
+                    <!-- Task items will be dynamically inserted here -->
+                </div>
+                <div class="add-task">
+                    <button id="add-task">Add Task</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 <a href="">To-Do List</a></p>
+    </footer>
   </body>
+  <script type="module" src="js/main.js"></script>
 </html>

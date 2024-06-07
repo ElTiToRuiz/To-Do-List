@@ -1,41 +1,63 @@
+/* Task card styling */
 .task-card {
-  position: relative; // Add this line
-  display: inline-flex;
-  flex-direction: row; // Elements in a row
-  align-items: center; // Align items in the center
-  justify-content: space-between; // Space out elements
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 0.25rem;
-  margin-bottom: 1rem;
+  background-color: #f8f9fa;
+  min-width: 400px;
+  max-width: 500px;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  background-color: #f8f9fa;
-  width: 80%; // Smaller width
-  max-width: 500px; // Adjust as needed
+  margin: 10px;
 
   &:hover {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-
-    .material-symbols-outlined {
-      opacity: 1; // Show the close button on hover
-    }
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
 
-  .task-header,
-  .task-body {
+  .task-card-header {
+    display: flex;
+    flex-direction: column; // Ensure the header contents are in a column layout
+    align-items: flex-start;
+    width: 100%; // Make sure it takes full width
+    margin-bottom: 1rem;
+  }
+
+  .task-card-header .material-symbols-outlined {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    cursor: pointer;
+  }
+
+  .task-card-header h3,
+  .task-card-header p {
     margin: 0;
+    padding: 0.5rem 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
-  .material-symbols-outlined {
-    position: absolute; // Position it absolutely
-    top: 10px; // At the top right corner
-    right: 10px;
-    opacity: 0; // Hide it by default
-    transition: opacity 0.3s ease-in-out; // Smooth transition
+  .task-card-body {
+    display: flex;
+    flex-direction: row; // Ensure body contents are in a row layout
+    justify-content: space-between;
+    width: 100%; // Ensure it takes full width
+  }
+
+  .task-status,
+  .task-date {
+    margin: 0.5rem 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
 
+/* Popup container styling */
 .popup-container {
   position: fixed;
   top: 0;
@@ -57,6 +79,22 @@
     transform: scale(1.05);
     transition: transform 0.3s ease-in-out;
 
+    .task-card-header,
+    .task-card-body {
+      max-width: 100%;
+      overflow-wrap: break-word;
+    }
+
+    .task-card-header {
+      flex-direction: column;
+    }
+
+    .task-card-header h3,
+    .task-card-header p {
+      max-width: 100%;
+      overflow-wrap: break-word;
+    }
+
     &:hover {
       transform: scale(1.1);
     }
@@ -71,41 +109,5 @@
         color: red;
       }
     }
-  }
-}.task-card {
-  display: flex;
-  flex-direction: row; // Elements in a row
-  align-items: center; // Align items in the center
-  justify-content: space-between; // Space out elements
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 0.25rem;
-  margin-bottom: 1rem;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  background-color: #f8f9fa;
-  width: 80%; // Smaller width
-  max-width: 500px; // Adjust as needed
-
-  &:hover {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-
-    .material-symbols-outlined {
-      opacity: 1; // Show the close button on hover
-    }
-  }
-
-  .task-header,
-  .task-body {
-    margin: 0;
-  }
-
-  .material-symbols-outlined {
-    position: absolute; // Position it absolutely
-    top: 10px; // At the top right corner
-    right: 10px;
-    cursor: pointer;
-    opacity: 0; // Hide it by default
-    transition: opacity 0.3s ease-in-out; // Smooth transition
   }
 }
