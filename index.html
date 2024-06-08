@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta http-equiv="X-UA-Compatible" content="ie=edge" />
       <title>To-Do List</title>
-      <link rel="stylesheet" href="sass/style.scss">
+      <link rel="stylesheet" href="scss/style.scss">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
   <body>
@@ -14,19 +14,21 @@
         <div class="menu">
             <section id="menu">
                 <span class="material-symbols-outlined">menu</span>
-                <h2>Sort Task</h2>
-                <div class="status" id="status-list">
+                <div class="status">
+                    <h2>Filter Task</h2>
                     <ul>
+                        <li><button id="all">All</button></li>
                         <li><button id="pending">Pending</button></li>
                         <li><button id="progress">Progress</button></li>
                         <li><button id="completed">Completed</button></li>
-                        <li><button id="all">Show All Tasks</button></li>
                     </ul>
                 </div>
-                <h2>Delete</h2>
                 <div class="delete">
-                    <button id="delete-category">Delete Completed Tasks</button>
-                    <button id="delete-all">Delete All</button>
+                    <h2>Delete</h2>
+                    <ul>
+                        <li> <button id="delete-category">Delete Completed Tasks</button></li>
+                        <li> <button id="delete-all">Delete All Tasks</button></li>
+                    </ul>
                 </div>
             </section>
         </div>
@@ -46,7 +48,17 @@
         </main>
     </div>
     <footer>
-        <p>&copy; 2024 <a href="">To-Do List</a></p>
+        <div class="footer-content">
+            <div class="copyright">
+              <p>&copy; 2024 <a href="">To-Do List</a></p>
+              <p>Made by Igor Ruiz</p>
+            </div>
+<!--            <div class="social-media">-->
+<!--              <a href="#"></a>-->
+<!--              <a href="#"></a>-->
+<!--              <a href="#"></a>-->
+<!--            </div>-->
+        </div>
     </footer>
   </body>
   <script type="module" src="js/main.js"></script>

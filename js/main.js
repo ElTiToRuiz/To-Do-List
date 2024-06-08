@@ -4,9 +4,10 @@ document.querySelector("main .material-symbols-outlined").style.display = "none"
 
 // Example function to create and add a task
 function addTask(task) {
-  const taskList = document.querySelector('.task-section .task-list');
-  const taskCard = task.setUpTask();
-  taskList.appendChild(taskCard);
+    const taskList = document.querySelector('.task-section .task-list');
+    const taskCard = task.setUpTask();
+    taskList.appendChild(taskCard);
+    task.changeColor()
 }
 
 // Example tasks
@@ -20,12 +21,12 @@ addTask(task2);
 addTask(task3);
 
 document.querySelector("section .material-symbols-outlined").addEventListener("click", () => {
-    document.querySelector("section").style.display = "none";
+    document.querySelector(".menu").style.display = "none";
     document.querySelector("main .material-symbols-outlined").style.display = "block";
 });
 
 document.querySelector("main .material-symbols-outlined").addEventListener("click", () => {
-    document.querySelector("section").style.display = "block";
+    document.querySelector(".menu").style.display = "block";
     document.querySelector("main .material-symbols-outlined").style.display = "none";
 });
 
