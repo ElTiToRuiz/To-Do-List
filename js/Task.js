@@ -173,6 +173,7 @@ class Task {
         originalElement.textContent = select.value;
         this.status = select.value; // Update the status property of the Task object
         editableElement.textContent = select.value;
+        this.changeColor();
         editableElement.removeChild(select);
       });
 
@@ -215,6 +216,19 @@ class Task {
       input.addEventListener('click', (event) => {
         event.stopPropagation();
       });
+    });
+  };
+
+  changeColor() {
+    const taskStatus = document.querySelectorAll('.task-status');
+    taskStatus.forEach(status => {
+      if (status.textContent.toLowerCase() === 'pending') {
+        status.style.backgroundColor = 'red';
+      } else if (status.textContent.toLowerCase() === 'progress') {
+        status.style.backgroundColor = 'yellow';
+      } else if (status.textContent.toLowerCase() === 'completed') {
+        status.style.backgroundColor = 'green';
+      }
     });
   }
 }

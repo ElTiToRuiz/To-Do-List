@@ -1,0 +1,7 @@
+/* _container.scss */
+.container {
+  @include flex-center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $background-color;
+}

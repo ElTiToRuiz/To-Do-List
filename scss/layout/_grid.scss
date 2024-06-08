@@ -1,0 +1,34 @@
+/* _grid.scss */
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  .material-symbols-outlined {
+    cursor: pointer;
+    margin: 10px;
+
+    &:hover {
+      transform: scale(1.01);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  .task-section {
+    flex: 1;
+  }
+
+  .add-task {
+    margin-top: 1rem;
+    text-align: center;
+
+    button {
+      background-color: $primary-color;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  }
+}

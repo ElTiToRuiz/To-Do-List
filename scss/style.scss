@@ -1,0 +1,12 @@
+/* style.scss */
+@import 'base/reset';
+@import 'base/variables';
+@import 'base/mixins';
+
+@import 'components/header';
+@import 'components/footer';
+@import 'components/menu';
+@import 'components/task';
+
+@import 'layout/container';
+@import 'layout/grid';
