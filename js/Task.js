@@ -184,7 +184,7 @@ class Task {
 
   createStatusSelect(currentStatus) {
     const select = document.createElement('select');
-    const options = ['Pending', 'In Progress', 'Completed'];
+    const options = ['Pending', 'Progress', 'Completed'];
     options.forEach(option => {
       const opt = document.createElement('option');
       opt.value = option;

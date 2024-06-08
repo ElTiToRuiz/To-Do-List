@@ -28,3 +28,44 @@ document.querySelector("main .material-symbols-outlined").addEventListener("clic
     document.querySelector("section").style.display = "block";
     document.querySelector("main .material-symbols-outlined").style.display = "none";
 });
+
+document.getElementById("add-task").addEventListener("click", () => {
+  addTask(new Task('untitled', 'untitled', '', new Date(), 'Pending'))
+  const taskList = document.querySelectorAll('.task-section .task-list .task-card');
+  taskList[taskList.length - 1].click();
+});
+
+const sort_task= ['pending', 'progress', 'completed'];
+sort_task.forEach(status => {
+  document.getElementById(status).addEventListener('click', () => {
+    const taskList = document.querySelectorAll('.task-section .task-list .task-card');
+    taskList.forEach(task => {
+      if (task.querySelector('.task-status').textContent.toLowerCase() === status) {
+        task.style.display = 'block';
+      } else {
+        task.style.display = 'none';
+      }
+    });
+  });
+})
+
+document.getElementById('all').addEventListener('click', () => {
+    const taskList = document.querySelectorAll('.task-section .task-list .task-card');
+    taskList.forEach(task => {
+        task.style.display = 'block';
+    });
+});
+
+const deleteTask = ['delete-category', 'delete-all'];
+deleteTask.forEach(id => {
+  document.getElementById(id).addEventListener('click', () => {
+    const taskList = document.querySelectorAll('.task-section .task-list .task-card');
+    taskList.forEach(task => {
+      if (id === 'delete-category' && task.querySelector('.task-status').textContent.toLowerCase() === 'completed') {
+        task.remove();
+      } else if (id === 'delete-all') {
+        task.remove();
+      }
+    });
+  });
+})
